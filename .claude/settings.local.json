@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la D:/project/mysite/)",
+      "Bash(git status *)",
+      "Bash(hugo new *)",
+      "WebSearch",
+      "Bash(git init *)",
+      "Bash(git submodule *)",
+      "Bash(rmdir /s /q themes/ananke)",
+      "Bash(git rm *)",
+      "Bash(hugo)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/adityatelange/hugo-PaperMod/exampleSite/hugo.toml\" -o hugo.toml.new)",
+      "WebFetch(domain:adityatelange.github.io)",
+      "Bash(mkdir -p content/archives layouts/_default static)",
+      "Bash(echo '--- *)",
+      "Bash(git add *)",
+      "Bash(rm -f .hugo_build.lock)",
+      "Bash(git commit -m 'feat: 初始化 Hugo 个人博客 \\(PaperMod theme\\) *)"
+    ]
+  }
+}

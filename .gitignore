@@ -1,0 +1,8 @@
+# ignore hugo's production output
+public/
+
+# Hugo build lock
+.hugo_build.lock
+
+# Claude
+.claude/
