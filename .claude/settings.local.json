@@ -29,7 +29,8 @@
       "Bash(python3 -c ' *)",
       "Bash(curl -sL \"https://api.github.com/repos/TodayYoHoHo/todayyohoho.github.io/actions/runs/27140283584/jobs\")",
       "Bash(python3 *)",
-      "Bash(git commit -m 'fix: 使用 gh-pages 分支部署 public 构建产物 *)"
+      "Bash(git commit -m 'fix: 使用 gh-pages 分支部署 public 构建产物 *)",
+      "Bash(git commit -m 'fix: 使用原生 deploy-pages 方式部署（不推送分支） *)"
     ]
   }
 }
