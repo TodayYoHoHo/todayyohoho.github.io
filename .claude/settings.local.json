@@ -16,7 +16,20 @@
       "Bash(echo '--- *)",
       "Bash(git add *)",
       "Bash(rm -f .hugo_build.lock)",
-      "Bash(git commit -m 'feat: 初始化 Hugo 个人博客 \\(PaperMod theme\\) *)"
+      "Bash(git commit -m 'feat: 初始化 Hugo 个人博客 \\(PaperMod theme\\) *)",
+      "Bash(git commit -m 'chore: 设置 GitHub Pages 域名 todayyohoho.github.io *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(curl -sI https://api.github.com/repos/TodayYoHoHo/todayyohoho.github.io/actions/runs)",
+      "Bash(curl -s \"https://api.github.com/repos/TodayYoHoHo/todayyohoho.github.io/actions/runs\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); runs=d.get\\('workflow_runs',d.get\\('workflows',[]\\)\\); [print\\(f'{r[\\\\\"id\\\\\"]}: {r[\\\\\"status\\\\\"]} / {r[\\\\\"conclusion\\\\\"]} - {r[\\\\\"updated_at\\\\\"]}'\\) for r in runs[:5]]\")",
+      "Bash(curl *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('Status:', d.get\\('status',''\\)\\); print\\('Build:', d.get\\('build',''\\)\\); print\\('Error:', d.get\\('error',''\\)\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -sL \"https://api.github.com/repos/TodayYoHoHo/todayyohoho.github.io/actions/runs/27140283584/jobs\")",
+      "Bash(python3 *)",
+      "Bash(git commit -m 'fix: 使用 gh-pages 分支部署 public 构建产物 *)"
     ]
   }
 }
