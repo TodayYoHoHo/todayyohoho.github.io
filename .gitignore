@@ -1,8 +1,14 @@
-# ignore hugo's production output
+﻿# ignore hugo's production output
 public/
 
 # Hugo build lock
 .hugo_build.lock
+
+# Hugo stats
+hugo_stats.json
+
+# Node modules
+node_modules/
 
 # Claude
 .claude/
