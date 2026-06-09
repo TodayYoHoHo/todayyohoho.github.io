@@ -38,7 +38,7 @@ defaultContentLanguageInSubdir = false
 
 ############################ Outputs ############################
 [outputs]
-  home     = ["HTML", "RSS", "WebAppManifest", "SearchIndex"]
+  home     = ["HTML", "RSS"]
   page     = ["HTML", "RSS"]
   section  = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
@@ -72,23 +72,6 @@ defaultContentLanguageInSubdir = false
   startLevel = 2
   endLevel = 5
   ordered = true
-
-########################### Media types ###########################
-[mediaTypes]
-[mediaTypes."application/manifest+json"]
-  suffixes = ["webmanifest"]
-
-########################### Output Format ##########################
-[outputFormats]
-[outputFormats.WebAppManifest]
-  mediaType = "application/manifest+json"
-  rel = "manifest"
-
-[outputFormats.SearchIndex]
-  mediaType = "application/json"
-  baseName = "searchindex"
-  isPlainText = true
-  notAlternative = true
 
 ############################ Plugins ##############################
 # CSS Plugins

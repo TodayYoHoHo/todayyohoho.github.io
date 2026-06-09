@@ -1,6 +1,6 @@
 [hugoVersion]
   extended = true
-  min = "0.126.0"
+  min = "0.158.0"
 
 [[module.mounts]]
   source = 'assets'
@@ -20,6 +20,9 @@
 [[module.mounts]]
   source = 'archetypes'
   target = 'archetypes'
+[[module.mounts]]
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'
 
 [[imports]]
 path = "hugoplate"
