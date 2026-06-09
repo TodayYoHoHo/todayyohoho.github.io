@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <!-- Banner -->
+  <section class="section pt-14">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 text-center">
+          <h1 class="mb-4 text-h2 lg:text-h1 font-bold">我的博客</h1>
+          <p class="mb-8 text-lg text-gray-600 dark:text-gray-300">
+            技术学习笔记、项目心得和生活随笔
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Banner -->
+
+  <!-- Blog Posts -->
+  <section class="section">
+    <div class="container">
+      <div class="row gx-5">
+        <!-- blog posts -->
+        <div class="lg:col-8">
+          <div class="row">
+            {{ $allPages := partial "get-all-posts" . }}
+            {{ $paginator := .Paginate $allPages 10 }}
+            {{ range $paginator.Pages }}
+              <div class="md:col-6 mb-14">
+                {{ partial "components/blog-card" . }}
+              </div>
+            {{ end }}
+          </div>
+          {{ partial "components/pagination.html" . }}
+        </div>
+        <!-- sidebar -->
+        <div class="lg:col-4">
+          <!-- widget -->
+          {{ $widget := site.Params.widgets.sidebar }}
+          {{ partialCached "widgets/widget-wrapper" (dict "Widgets" $widget "Scope" .) }}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Blog Posts -->
+{{ end }}

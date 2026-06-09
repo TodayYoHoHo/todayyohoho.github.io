@@ -1,0 +1,8 @@
+{{- $allPages := slice -}}
+{{- range site.Params.mainSections -}}
+  {{- $section := . -}}
+  {{- range where site.RegularPages "Section" $section -}}
+    {{- $allPages = $allPages | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return ($allPages | uniq) -}}

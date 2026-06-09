@@ -1,0 +1,5 @@
+{{/* Fallback basic SEO */}}
+<meta name="description" content="{{ with site.Params.metadata.description }}{{ . }}{{ else }}{{ site.Title }}{{ end }}" />
+<meta name="author" content="{{ with site.Params.metadata.author }}{{ . }}{{ else }}{{ site.Title }}{{ end }}" />
+{{ range site.Params.metadata.keywords }}<meta name="keywords" content="{{ . }}" />
+{{ end }}

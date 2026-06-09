@@ -1,0 +1,3 @@
+[security]
+[security.high]
+  enabled = false

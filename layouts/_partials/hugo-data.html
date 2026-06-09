@@ -1,0 +1,8 @@
+{{/* Fallback hugo.Data - social config from params */}}
+{{ $social := dict }}
+{{ $main := slice }}
+{{ range site.Params.social }}
+  {{ $main = $main | append . }}
+{{ end }}
+{{ $social = merge $social (dict "main" $main) }}
+{{ return $social }}

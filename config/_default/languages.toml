@@ -1,0 +1,6 @@
+################ English language ##################
+[en]
+  label = "En"
+  locale = "zh-cn"
+  contentDir = "content"
+  weight = 1

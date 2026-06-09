@@ -1,0 +1,4 @@
+{{/* Fallback favicon partial - used when hugo-modules images module is not available */}}
+{{ with site.Params.favicon }}
+  <link rel="shortcut icon" href="{{ . | absURL }}" type="" />
+{{ end }}

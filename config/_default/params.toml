@@ -1,0 +1,86 @@
+#################### default parameters ############################
+# Favicon
+favicon = "images/favicon.png"
+# Logo
+logo = "images/logo.png"
+logo_darkmode = "images/logo-darkmode.png"
+logo_width = "160px"
+logo_height = "32px"
+# navbar fixed to top
+navbar_fixed = true
+# theme-mode
+theme_switcher = true
+theme_default = "system" # available options [light/dark/system]
+# Main Sections
+mainSections = ["posts", "学习笔记"]
+# copyright
+copyright = "© 2026 - 我的博客"
+
+# Preloader
+[preloader]
+  enable = false
+  preloader = ""
+
+# Navigation button
+[navigation_button]
+  enable = false
+  label = "Github"
+  link = "https://github.com/todayyohoho"
+
+# LLMs Configuration
+[llms]
+  generate_llms_txt = false
+  generate_llms_full_txt = false
+  include = []
+  exclude = []
+
+# search
+[search]
+  enable = true
+  primary_color = "#121212"
+  include_sections = ["posts", "学习笔记"]
+  show_image = true
+  show_description = true
+  show_tags = true
+  show_categories = true
+
+# announcement
+[announcement]
+  enable = false
+  expire_days = 7
+  content = ""
+
+# seo meta data for OpenGraph / Twitter Card
+[metadata]
+  keywords = ["博客", "技术笔记", "Hugo"]
+  description = "一个个人技术博客"
+  author = "todayyohoho"
+  twitter = "todayyohoho"
+  image = "images/og-image.png"
+
+# site verifications
+[site_verification]
+  google = ""
+  bing = ""
+  baidu = ""
+  facebook = ""
+  mastodon = ""
+
+# cookies
+[cookies]
+  enable = false
+  expire_days = 60
+  content = "This site uses cookies."
+  button = "I Accept"
+
+# diagrams
+[mermaid]
+  js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
+
+######################## sidebar widgets #########################
+[widgets]
+  sidebar = ["categories", "tags"]
+
+# OpenRemark Comments
+[open_remark]
+  enable = false

@@ -1,0 +1,54 @@
+<!-- JS Plugins + Main script -->
+{{ $scripts := slice }}
+{{ range site.Params.plugins.js }}
+  {{ if findRE "^http" .link }}
+    <script
+      src="{{ .link | relURL }}"
+      type="application/javascript"
+      {{ .attributes | safeHTMLAttr }}></script>
+  {{ else }}
+    {{ $res := resources.Get .link }}
+    {{ if $res }}
+      {{ $scripts = $scripts | append $res }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<!-- main script -->
+{{ $mainJS := resources.Get "js/main.js" }}
+{{ if $mainJS }}
+  {{ $scripts = $scripts | append $mainJS }}
+{{ end }}
+
+{{ $allScripts := slice }}
+{{ range $scripts }}
+  {{ if . }}
+    {{ $allScripts = $allScripts | append . }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $allScripts) 0 }}
+  {{ $finalScripts := $allScripts | resources.Concat "js/script.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $finalScripts = $finalScripts | minify | fingerprint }}
+  {{ end }}
+  <script
+    crossorigin="anonymous"
+    integrity="{{ $finalScripts.Data.Integrity }}"
+    src="{{ $finalScripts.RelPermalink }}"></script>
+{{ else }}
+  {{ $mainJS := resources.Get "js/main.js" }}
+  {{ if $mainJS }}
+    {{ $mainJS := $mainJS | fingerprint }}
+    <script
+      crossorigin="anonymous"
+      integrity="{{ $mainJS.Data.Integrity }}"
+      src="{{ $mainJS.RelPermalink }}"></script>
+  {{ end }}
+{{ end }}
+
+<!-- cookie consent -->
+{{ partialCached "cookie-consent.html" . }}
+
+<!-- announcement -->
+{{ partialCached "announcement-script.html" . }}

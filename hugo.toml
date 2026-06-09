@@ -1,39 +1,10 @@
+# hugo.toml - main config entry point
+# The bulk of configuration is in config/_default/
+
 baseURL = 'https://todayyohoho.github.io/'
-languageCode = 'zh-cn'
 title = '我的博客'
-theme = 'PaperMod'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
 
 [params]
-  author = '你的名字'
-  description = '一个个人技术博客'
-  defaultTheme = 'auto'
-  ShowReadingTime = true
-  ShowPostNavButtons = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowToc = true
-  ShowTocToggle = true
-  ShowPageNums = true
-
-[[menu.main]]
-  identifier = "posts"
-  name = "文章"
-  url = "/posts/"
-  weight = 10
-
-[[menu.main]]
-  identifier = "archives"
-  name = "归档"
-  url = "/archives/"
-  weight = 20
-
-[params.homePageTitle]
-  title = '我的博客'
-
-[params.footer]
-  textAlign = "center"
   copyright = "© 2026 - 我的博客"
-
-[params.fuseOpts]
-  key = "title"
-  threshold = 0.2

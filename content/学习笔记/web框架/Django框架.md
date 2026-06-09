@@ -2,6 +2,7 @@
 date = '2026-05-20T00:00:00+08:00'
 draft = false
 title = 'Django 框架'
+author = "todayyohoho"
 tags = ['web', 'python', 'django']
 +++
 # Django框架

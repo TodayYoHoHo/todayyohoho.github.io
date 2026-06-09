@@ -1,0 +1,23 @@
+{{/* Fallback image partial - simplified version */}}
+{{ $Src := .Src }}
+{{ $Alt := .Alt | default "Image" }}
+{{ $Class := .Class | default "" }}
+{{ $Context := .Context }}
+
+{{ if $Context }}
+  {{ $Src = $Context.RelPermalink | replaceRE "/$" "" | replaceRE "[^/]+$" "" | printf "%s%s" }}
+  {{ $fullPath := printf "%s/images/%s" (path.Dir ($Context.File.Path)) $Src }}
+  {{ with resources.Get $fullPath }}
+    {{ $Src = .RelPermalink }}
+  {{ end }}
+{{ end }}
+
+{{ if strings.HasSuffix $Src ".svg" }}
+  <img src="{{ $Src | relURL }}" alt="{{ $Alt }}" class="{{ $Class }}" />
+{{ else }}
+  <img
+    src="{{ $Src | relURL }}"
+    alt="{{ $Alt }}"
+    loading="lazy"
+    class="{{ $Class }}" />
+{{ end }}

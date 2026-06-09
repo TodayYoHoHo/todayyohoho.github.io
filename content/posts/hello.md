@@ -2,6 +2,7 @@
 date = '2026-06-08T21:05:21+08:00'
 draft = false
 title = 'Hello World - 我的第一篇博客'
+author = "todayyohoho"
 +++
 
 欢迎来到我的个人博客！

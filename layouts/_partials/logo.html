@@ -1,0 +1,6 @@
+{{/* Fallback logo partial */}}
+{{ with site.Params.logo }}
+  {{ partial "image" (dict "Src" . "Alt" site.Title "Class" "max-h-[32px] w-auto" ) }}
+{{ else }}
+  <span class="font-bold text-xl">{{ site.Title }}</span>
+{{ end }}

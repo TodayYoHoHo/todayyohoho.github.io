@@ -2,6 +2,7 @@
 date = '2026-05-23T00:00:00+08:00'
 draft = false
 title = 'HTTP/2'
+author = "todayyohoho"
 tags = ['web', 'http', 'http2']
 +++
 # HTTP2

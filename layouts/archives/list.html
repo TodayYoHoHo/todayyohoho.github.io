@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <h1 class="mb-8 text-center">{{ .Title | title }}</h1>
+
+          {{/* Group all pages from all sections by year */}}
+          {{ $allPages := partial "get-all-posts" . }}
+          {{ $years := $allPages.GroupByDate "2006" }}
+
+          {{ range $years }}
+            <h2 class="mb-4 mt-8 text-2xl">{{ .Key }}</h2>
+            <div class="space-y-3">
+              {{ range .Pages }}
+                <div class="flex items-center justify-between border-b pb-2">
+                  <a href="{{ .Permalink }}" class="hover:underline">{{ .Title }}</a>
+                  <span class="text-sm text-gray-500">{{ time.Format "2006-01-02" .PublishDate }}</span>
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

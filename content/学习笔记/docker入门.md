@@ -2,6 +2,7 @@
 date = '2026-05-26T00:00:00+08:00'
 draft = false
 title = 'Docker 入门'
+author = "todayyohoho"
 tags = ['docker']
 +++
 # docker入门
