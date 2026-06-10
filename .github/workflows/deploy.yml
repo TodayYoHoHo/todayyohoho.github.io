@@ -31,11 +31,22 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      # 1. 加这步：装 Node（必须，才能用 npx 跑 tailwind）
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
+
+      # 2. 加这步：确保 tailwind 可用（自动下载）
+      - name: Install TailwindCSS CLI
+        run: npx tailwindcss --help
 
       - name: Setup Pages
         id: pages

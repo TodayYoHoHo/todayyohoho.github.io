@@ -42,8 +42,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Node dependencies
-        run: npm install
+      # 👇 这一行是修复关键：强制安装 tailwindcss
+      - name: Install Tailwind CSS CLI
+        run: npm install -g tailwindcss
 
       - name: Setup Pages
         id: pages
