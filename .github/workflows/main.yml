@@ -37,13 +37,14 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
+      # 关键修改：去掉 cache 配置，避免因缺少 package.json 报错
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 👇 这一行是修复关键：强制安装 tailwindcss
-      - name: Install Tailwind CSS CLI
+      # 直接全局安装 TailwindCSS CLI，无需项目依赖文件
+      - name: Install TailwindCSS CLI
         run: npm install -g tailwindcss
 
       - name: Setup Pages
